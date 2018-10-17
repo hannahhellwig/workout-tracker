@@ -9,6 +9,7 @@ class ProfilePage extends React.Component {
   }
 
   onChange = date => this.setState({ date })
+  onClickDay = value => alert('Clicked day: ', value)
 
   render() {
     return (
