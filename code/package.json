@@ -5,6 +5,7 @@
   "dependencies": {
     "eslint-config-technigo": "^1.5.0",
     "eslint-plugin-jsx-a11y": "^6.0.3",
+    "node-sass": "^4.9.4",
     "react": "^16.2.0",
     "react-calendar": "^2.17.4",
     "react-dom": "^16.2.0",

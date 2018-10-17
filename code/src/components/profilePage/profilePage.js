@@ -1,5 +1,4 @@
 import React from "react"
-
 import Calendar from 'react-calendar'
 
 class ProfilePage extends React.Component {
@@ -9,14 +8,19 @@ class ProfilePage extends React.Component {
   }
 
   onChange = date => this.setState({ date })
-  onClickDay = value => alert('Clicked day: ', value)
+
+  onClickDay = exercise => alert('Clicked day: ', exercise)
 
   render() {
     return (
       <div>
         <Calendar
           onChange={this.onChange}
-          value={this.state.date} />
+          value={this.state.date}
+          onClickDay={this.onClickDay} />
+        <div className="popup">
+            hej
+        </div>
       </div>
     )
   }
