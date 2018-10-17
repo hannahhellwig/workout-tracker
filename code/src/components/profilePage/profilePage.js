@@ -1,26 +1,26 @@
 import React from "react"
 import Calendar from 'react-calendar'
+import Form from "./form"
 
 class ProfilePage extends React.Component {
-
-  state = {
-    date: new Date()
+  constructor(props) {
+    super(props)
+    this.state = {
+      date: new Date(),
+      dateIsClicked: false
+    }
   }
 
-  onChange = date => this.setState({ date })
-
-  onClickDay = exercise => alert('Clicked day: ', exercise)
+  onChange = date => this.setState({ date, dateIsClicked: true })
 
   render() {
     return (
       <div>
         <Calendar
-          onChange={this.onChange}
-          value={this.state.date}
-          onClickDay={this.onClickDay} />
-        <div className="popup">
-            hej
-        </div>
+          onClickDay={this.onChange}
+          value={this.state.date} />
+        {this.state.dateIsClicked && <Form />}
+
       </div>
     )
   }
