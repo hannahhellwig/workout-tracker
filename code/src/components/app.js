@@ -1,12 +1,29 @@
 import React from "react"
+import { BrowserRouter as Router, Route, Link } from "react-router-dom"
+
+import ProfilePage from "./profilePage/profilePage"
 
 class App extends React.Component {
 
+  constructor(props) {
+    super(props)
+    this.state = {
+      page: "ProfilePage"
+    }
+  }
+
+  goToProfile = () => {
+    this.setState({ page: "ProfilePage"})
+  }
+
   render() {
     return (
-      <div>
-        Find me in src/app.js!
-      </div>
+      <Router>
+        <div>
+          <Route path="/" exact="true" component={ProfilePage} />
+          <Route path="/profile" exact="true" component={ProfilePage} />
+        </div>
+      </Router>
     )
   }
 
