@@ -16,7 +16,21 @@ class Form extends React.Component {
   render() {
     return (
       <div>
-        <p>Add your exercise</p>
+        <h1>{this.props.value}</h1>
+        <form>
+          <label>
+            Strenght
+            <input type="checkbox" value="Strenght" />
+          </label>
+          <label>
+            Fitness
+            <input type="checkbox" value="Fitness" />
+          </label>
+          <label>
+            Flexability
+            <input type="checkbox" value="Flexability" />
+          </label>
+        </form>
       </div>
     )
   }

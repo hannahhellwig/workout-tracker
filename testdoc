@@ -1,0 +1,81 @@
+import React from "react"
+import Calendar from "react-calendar"
+// import Form from "./Form"
+
+class ProfilePage extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      date: new Date()
+    }
+    this.textInput = null;
+
+    this.setTextInputRef = element => {
+      this.textInput = element;
+    };
+  }
+
+  onChange = date => this.setState({ date }, () => {
+    this.textInput.appendChild(div)
+  })
+  //
+  // onClickDay = exercise => alert('Clicked day: ', exercise)
+
+  render() {
+    return (
+      <div>
+        <Calendar
+          onClickDay={this.onChange}
+          value={this.state.date} />
+
+          <div ref={this.setTextInputRef} />
+      </div>
+    )
+  }
+
+}
+
+export default ProfilePage
+
+
+---
+
+
+import React from "react"
+import Calendar from 'react-calendar'
+
+class ProfilePage extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      date: new Date()
+    }
+    this.textInput = null
+
+    this.setTextInputRef = element => {
+      this.textInput = element
+    }
+  }
+
+  onChange = date => this.setState({ date }, () => {
+    const element = document.createElement("input")
+    this.textInput.appendChild(element)
+  })
+  //
+  // onClickDay = exercise => alert('Clicked day: ', exercise)
+
+  render() {
+    return (
+      <div>
+        <Calendar
+          onClickDay={this.onChange}
+          value={this.state.date} />
+
+          <div ref={this.setTextInputRef} />
+      </div>
+    )
+  }
+
+}
+
+export default ProfilePage

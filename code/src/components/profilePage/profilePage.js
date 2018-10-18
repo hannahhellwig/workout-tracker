@@ -19,7 +19,7 @@ class ProfilePage extends React.Component {
         <Calendar
           onClickDay={this.onChange}
           value={this.state.date} />
-        {this.state.dateIsClicked && <Form />}
+        {this.state.dateIsClicked && <Form value={this.state.date} />}
 
       </div>
     )
