@@ -1,13 +1,14 @@
 import React from "react"
-import Calendar from 'react-calendar'
-import Form from "./form"
+import Calendar from "react-calendar"
+import ExerciseForm from "./exerciseForm"
 
 class ProfilePage extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
       date: new Date(),
-      dateIsClicked: false
+      dateIsClicked: false,
+      count: 0
     }
   }
 
@@ -19,8 +20,10 @@ class ProfilePage extends React.Component {
         <Calendar
           onClickDay={this.onChange}
           value={this.state.date} />
-        {this.state.dateIsClicked && <Form value={this.state.date} />}
 
+        {this.state.dateIsClicked &&
+          <ExerciseForm
+            value={this.state.date} />}
       </div>
     )
   }
