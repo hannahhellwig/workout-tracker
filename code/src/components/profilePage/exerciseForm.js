@@ -4,47 +4,45 @@ import React from "react"
 
 class ExerciseForm extends React.Component {
 
-  state = {
-    count: 0
+  updateTwoPoints = event => {
+    if (event.target.checked) {
+      this.props.onScoreChange(2)
+    } else {
+      this.props.onScoreChange(-2)
+    }
   }
 
-  addTwoPoints = () => {
-    this.setState({
-      count: this.state.count + 2
-    })
+  updateFivePoints = event => {
+    if (event.target.checked) {
+      this.props.onScoreChange(5)
+    } else {
+      this.props.onScoreChange(-5)
+    }
   }
 
-  addFivePoints = () => {
-    this.setState({
-      count: this.state.count + 5
-    })
+  updateThreePoints = event => {
+    if (event.target.checked) {
+      this.props.onScoreChange(3)
+    } else {
+      this.props.onScoreChange(-3)
+    }
   }
-
-  addThreePoints = () => {
-    this.setState({
-      count: this.state.count + 3
-    })
-  }
-
-  // Varför uppdateras inte statet: count? Vi testade att göra knapp
-  // nedan, men detta fungerade inte heller.
 
   render() {
     return (
       <div>
-        <button onClick={this.addTwoPoints} >Count number</button>
         <form>
           <label>
             10 Situps (2 p)
-            <input type="checkbox" value="2p" onChange={this.addTwoPoints} />
+            <input type="checkbox" value="2p" onChange={this.updateTwoPoints} />
           </label>
           <label>
             15 Burpees (3 p)
-            <input type="checkbox" value="3p" onChange={this.addThreePoints} />
+            <input type="checkbox" value="3p" onChange={this.updateThreePoints} />
           </label>
           <label>
             20 min jogging (5 p)
-            <input type="checkbox" value="5p" onChange={this.addFivePoints} />
+            <input type="checkbox" value="5p" onChange={this.updateFivePoints} />
           </label>
         </form>
       </div>

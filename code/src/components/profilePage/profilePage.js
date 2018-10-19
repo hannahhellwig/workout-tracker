@@ -8,22 +8,29 @@ class ProfilePage extends React.Component {
     this.state = {
       date: new Date(),
       dateIsClicked: false,
-      count: 0
+      score: 0
     }
   }
 
   onChange = date => this.setState({ date, dateIsClicked: true })
 
+  increaseScore = (amount) => {
+    this.setState({ score: this.state.score + amount })
+    this.setState({ show: !this.state.show })
+  }
+
   render() {
     return (
       <div>
+        Points: {this.state.score}
         <Calendar
           onClickDay={this.onChange}
           value={this.state.date} />
 
         {this.state.dateIsClicked &&
           <ExerciseForm
-            value={this.state.date} />}
+            value={this.state.date}
+            onScoreChange={this.increaseScore} />}
       </div>
     )
   }
