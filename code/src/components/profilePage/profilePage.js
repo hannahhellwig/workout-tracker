@@ -14,7 +14,7 @@ class ProfilePage extends React.Component {
 
   onChange = date => this.setState({ date, dateIsClicked: true })
 
-  increaseScore = (amount) => {
+  increaseScore = amount => {
     this.setState({ score: this.state.score + amount })
     this.setState({ show: !this.state.show })
   }
