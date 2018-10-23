@@ -10,6 +10,7 @@ class ExerciseForm extends React.Component {
     } else {
       this.props.onScoreChange(-2)
     }
+    this.props.updateActivity("situps", this.props.date, event.target.checked)
   }
 
   updateFivePoints = event => {
@@ -18,6 +19,7 @@ class ExerciseForm extends React.Component {
     } else {
       this.props.onScoreChange(-5)
     }
+    this.props.updateActivity("jogging", this.props.date, event.target.checked)
   }
 
   updateThreePoints = event => {
@@ -26,15 +28,20 @@ class ExerciseForm extends React.Component {
     } else {
       this.props.onScoreChange(-3)
     }
+    this.props.updateActivity("burpees", this.props.date, event.target.checked)
   }
 
   render() {
+    updateChecked = event => {
+      {this.props.activityDate}
+    }
+
     return (
       <div>
         <form>
           <label>
             10 Situps (2 p)
-            <input type="checkbox" value="2p" onChange={this.updateTwoPoints} />
+            <input type="checkbox" checked={this.updateChecked} value="2p" onChange={this.updateTwoPoints} />
           </label>
           <label>
             15 Burpees (3 p)
@@ -51,4 +58,5 @@ class ExerciseForm extends React.Component {
 
 }
 
+// checked={}
 export default ExerciseForm

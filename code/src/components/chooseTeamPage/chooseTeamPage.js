@@ -16,21 +16,20 @@ class ChooseTeamPage extends React.Component {
   componentDidMount() {
     fetch(svenskaSpelApi).then(response => response.json()).then(json => {
       this.setState({
-        data: json
+        data: json.data
       })
     })
   }
-// fetch is working
-// map function not working
+
   render() {
     return (
       <div>
-        {this.state.data.map(team => {
-          return <ChooseTeam
+        {this.state.data.map(team =>
+          <ChooseTeam
             name={team.name}
             id={team.id}
             city={team.city}
-            subSection={team.subSection} />})}
+            subSection={team.subSection} />)}
       </div>
     )
   }

@@ -6,4 +6,4 @@ import "./components/profilePage/profilePage.scss"
 import ProfilePage from "./components/profilePage/profilePage"
 import ChooseTeamPage from "./components/chooseTeamPage/chooseTeamPage"
 
-ReactDOM.render(<ChooseTeamPage />, document.getElementById("root"))
+ReactDOM.render(<ProfilePage />, document.getElementById("root"))
