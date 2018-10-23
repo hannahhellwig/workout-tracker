@@ -32,9 +32,9 @@ class ExerciseForm extends React.Component {
   }
 
   render() {
-    updateChecked = event => {
-      {this.props.activityDate}
-    }
+    // updateChecked = event => {
+    //   {this.props.activityDate}
+    // }
 
     return (
       <div>
