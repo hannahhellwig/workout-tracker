@@ -1,5 +1,31 @@
-.popup {
-  width: 100px;
-  height: 100px;
-  background-color: pink;
+*{
+  box-sizing: border-box;
+}
+
+// .popup {
+//   width: 100px;
+//   height: 100px;
+//   background-color: pink;
+// }
+
+.profileInfoHeader{
+  display: flex;
+  flex-direction: row;
+  img{
+    margin: 10px 0;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+  }
+}
+
+.profileInfo{
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 10px;
+
+  h2{
+    font-size: 14px;
+    margin: 0;
+  }
 }

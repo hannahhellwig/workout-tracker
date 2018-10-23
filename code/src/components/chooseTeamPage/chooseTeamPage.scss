@@ -1,7 +1,15 @@
+body{
+  padding: 20px;
+}
 
 p {
   margin: 0;
   padding-bottom: 10px;
+}
+
+h3 {
+  margin: 0;
+  padding: 0;
 }
 
 button {
@@ -18,28 +26,28 @@ button {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  margin: 20px;
-}
-
-#searchField {
-  border: 1px solid #000;
+  margin: 20px 0;
 }
 
 .searchFieldContainer {
   display: flex;
-  flex-direction: row;
+  flex-flow: row wrap;
   justify-content: center;
-  padding: 40px 0;
+  padding: 40px 0 20px;
 
   input {
-    width: 250px;
-    height: 20px;
-    padding: 10px 0;
+    width: 120px;
+    height: auto;
+    margin: 0 0 0 5px;
     font-size: 14px;
+    background: transparent;
+    border: 0;
+    border-bottom: 1px solid #222;
+    outline: none;
   }
 
   input[type=search]:focus {
-    // background-color: pink;
+    background-color: #e0ffdb;
   }
 
 }

@@ -13,20 +13,13 @@ class ChooseTeamPage extends React.Component {
   }
 
   componentDidMount() {
-    fetch(`https://api.www.svenskaspel.se/player/sponsorship/autocomplete?search=${this.state.search}&numResponses=20"`).then(response => response.json()).then(json => {
+    fetch(`https://api.www.svenskaspel.se/player/sponsorship/autocomplete?search=${this.state.search}&numResponses=30"`).then(response => response.json()).then(json => {
       this.setState({
         data: json.data
       })
     })
   }
-
-  // const filteredList = this.state.data
-  //   filteredList = filteredList.filter(function(item) {
-  //     return item.search(
-  //       event.target.value) !== -1
-  //   })
-  // this.setState({data: filteredList})
-
+  
   handleSearch = event => {
     this.setState({
       search: event.target.value,
@@ -37,7 +30,7 @@ class ChooseTeamPage extends React.Component {
     return (
       <div>
         <div className="searchFieldContainer">
-          <input type="search" id="searchField" placeholder="Search Sport Club" onChange={this.handleSearch} value={this.state.search} />
+          <h3>I want to collect points to my team based in<input type="search" id="searchField" placeholder=" city" onChange={this.handleSearch} value={this.state.search} />!</h3>
         </div>
         <div className="teamList">
           {this.state.data.map(team => <ChooseTeam
