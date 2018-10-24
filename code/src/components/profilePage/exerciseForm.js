@@ -11,6 +11,7 @@ class ExerciseForm extends React.Component {
       this.props.onScoreChange(-2)
     }
     this.props.updateActivity("situps", this.props.date, event.target.checked)
+    // this.props.handleDateColor()
   }
 
   updateFivePoints = event => {
@@ -30,6 +31,15 @@ class ExerciseForm extends React.Component {
     }
     this.props.updateActivity("burpees", this.props.date, event.target.checked)
   }
+
+  // handleDateColor = () => {
+  //   if (this.props.activityDate.situps == true) {
+  //     console.log("hej")
+  //     // button.style.backgroundColor = green
+  //   } else {
+  //     console.log("bye")
+  //   }
+  // }
 
   render() {
     return (
