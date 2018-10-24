@@ -32,23 +32,19 @@ class ExerciseForm extends React.Component {
   }
 
   render() {
-    // updateChecked = event => {
-    //   {this.props.activityDate}
-    // }
-
     return (
       <div>
         <form className="dailyExercises">
           <label>
-            <input type="checkbox" checked={this.updateChecked} value="2p" onChange={this.updateTwoPoints} />
+            <input type="checkbox" checked={this.props.activityDate.situps} value="2p" onChange={this.updateTwoPoints} />
             Situps 10 reps (2 p)
           </label>
           <label>
-            <input type="checkbox" value="3p" onChange={this.updateThreePoints} />
+            <input type="checkbox" checked={this.props.activityDate.burpees} value="3p" onChange={this.updateThreePoints} />
             Burpees 15 reps (3 p)
           </label>
           <label>
-            <input type="checkbox" value="5p" onChange={this.updateFivePoints} />
+            <input type="checkbox" checked={this.props.activityDate.jogging} value="5p" onChange={this.updateFivePoints} />
             Jogging 20 min (5 p)
           </label>
         </form>

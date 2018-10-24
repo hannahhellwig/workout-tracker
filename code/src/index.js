@@ -8,4 +8,4 @@ import "./components/chooseTeamPage/chooseTeamPage.scss"
 import ProfilePage from "./components/profilePage/profilePage"
 import ChooseTeamPage from "./components/chooseTeamPage/chooseTeamPage"
 
-ReactDOM.render(<App />, document.getElementById("root"))
+ReactDOM.render(<ProfilePage />, document.getElementById("root"))
