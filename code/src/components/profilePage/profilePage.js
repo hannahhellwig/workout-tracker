@@ -5,20 +5,25 @@ import ExerciseForm from "./exerciseForm"
 class ProfilePage extends React.Component {
   constructor(props) {
     super(props)
-    if (localStorage.getItem("userScore", "userDates")) {
-      this.state = {
-        date: new Date(),
-        score: JSON.parse(localStorage.getItem("userScore")),
-        dateIsClicked: false,
-        dates: {}
-      }
-    } else {
-      this.state = {
-        date: new Date(),
-        dateIsClicked: false,
-        score: 0,
-        dates: {}
-      }
+    this.state = {
+      date: new Date(),
+      score: localStorage.getItem("userScore") ? JSON.parse(localStorage.getItem("userScore")) : 0,
+      dateIsClicked: false,
+      dates: localStorage.getItem("userDates") ? JSON.parse(localStorage.getItem("userDates")) : {}
+    // if (localStorage.getItem("userScore")) {
+    //   this.state = {
+    //     date: new Date(),
+    //     score: JSON.parse(localStorage.getItem("userScore")),
+    //     dateIsClicked: false,
+    //     dates: {}
+    //   }
+    // } else {
+    //   this.state = {
+    //     date: new Date(),
+    //     dateIsClicked: false,
+    //     score: 0,
+    //     dates: {}
+    //   }
     }
   }
 
@@ -26,30 +31,37 @@ class ProfilePage extends React.Component {
     const { dates } = this.state
     const timestamp = date.getTime()
     const currentScore = this.state.score
+    const currentDates = this.state.dates
     if (!dates[timestamp]) {
       dates[timestamp] = { situps: false, burpees: false, jogging: false }
-      localStorage.setItem("userDates", JSON.stringify(currentScore))
+      localStorage.setItem("userScore", JSON.stringify(currentScore))
       this.setState({
         date: date.getTime(),
         dateIsClicked: true,
         dates
       })
+    } else {
+      this.setState({
+        date: date.getTime(),
+        dateIsClicked: true
+      })
     }
+    localStorage.setItem("userDates", JSON.stringify(currentDates))
   }
 
   increaseScore = amount => {
     const currentScore = this.state.score
-    localStorage.setItem("userScore", JSON.stringify(currentScore))
+    localStorage.setItem("userScore", JSON.stringify(currentScore + amount))
     this.setState({ score: this.state.score + amount })
     this.setState({ show: !this.state.show })
   }
 
   updateActivity = (activity, date, value) => {
-    const currentScore = this.state.score
+    const currentDates = this.state.dates
     const { dates } = this.state
     dates[date][activity] = value
-    localStorage.setItem("userScore", JSON.stringify(currentScore))
     this.setState({ dates })
+    localStorage.setItem("userDates", JSON.stringify(currentDates))
   }
 
   render() {
@@ -65,7 +77,7 @@ class ProfilePage extends React.Component {
           <h2 className="points">Points: {this.state.score}</h2>
         </div>
         <Calendar
-          onClickDay={this.onChange} />
+          onClickDay={date => this.onChange(date)} />
 
         {this.state.dateIsClicked &&
           <ExerciseForm
