@@ -7,9 +7,10 @@ class ProfilePage extends React.Component {
     super(props)
     if (localStorage.getItem("userScore", "userDates")) {
       this.state = {
+        date: new Date(),
         score: JSON.parse(localStorage.getItem("userScore")),
         dateIsClicked: false,
-        dates: JSON.parse(localStorage.getItem("userDates"))
+        dates: {}
       }
     } else {
       this.state = {

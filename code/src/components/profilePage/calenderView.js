@@ -1,12 +1,13 @@
 import React from "react"
-import Calendar from 'react-calendar'
+import Calendar from "react-calendar"
 
 class CalenderView extends React.Component {
 
   render() {
     return (
       <div>
-        <Calendar />
+        <Calendar
+          minDetail="month" />
       </div>
     )
   }
