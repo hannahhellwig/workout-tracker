@@ -5,19 +5,29 @@ import ExerciseForm from "./exerciseForm"
 class ProfilePage extends React.Component {
   constructor(props) {
     super(props)
-    this.state = {
-      date: new Date(),
-      dateIsClicked: false,
-      score: 0,
-      dates: {}
+    if (localStorage.getItem("userScore", "userDates")) {
+      this.state = {
+        score: JSON.parse(localStorage.getItem("userScore")),
+        dateIsClicked: false,
+        dates: JSON.parse(localStorage.getItem("userDates"))
+      }
+    } else {
+      this.state = {
+        date: new Date(),
+        dateIsClicked: false,
+        score: 0,
+        dates: {}
+      }
     }
   }
 
   onChange = date => {
     const { dates } = this.state
     const timestamp = date.getTime()
+    const currentScore = this.state.score
     if (!dates[timestamp]) {
       dates[timestamp] = { situps: false, burpees: false, jogging: false }
+      localStorage.setItem("userDates", JSON.stringify(currentScore))
       this.setState({
         date: date.getTime(),
         dateIsClicked: true,
@@ -27,13 +37,17 @@ class ProfilePage extends React.Component {
   }
 
   increaseScore = amount => {
+    const currentScore = this.state.score
+    localStorage.setItem("userScore", JSON.stringify(currentScore))
     this.setState({ score: this.state.score + amount })
     this.setState({ show: !this.state.show })
   }
 
   updateActivity = (activity, date, value) => {
+    const currentScore = this.state.score
     const { dates } = this.state
     dates[date][activity] = value
+    localStorage.setItem("userScore", JSON.stringify(currentScore))
     this.setState({ dates })
   }
 
