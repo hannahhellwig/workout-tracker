@@ -1,3 +1,6 @@
+$primaryGreenColor: #158e00;
+$hoverGreenColor: #75c66a;
+
 *{
   box-sizing: border-box;
 }
@@ -6,12 +9,17 @@
   width: 100%;
 }
 
-.profileInfoHeader{
+.react-calendar{
+  width: 100%;
+}
+
+.profileHeader{
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
 
   h1{
-    text-decoration: underline #158e00;
+    text-decoration: underline $primaryGreenColor;
   }
 
   img{
@@ -33,7 +41,7 @@
   }
 
   .points{
-    color: #158e00;
+    color: $primaryGreenColor;
   }
 }
 
@@ -50,12 +58,38 @@
     width: 33.33%;
     text-align: center;
   }
+
+  img{
+    width: 55px;
+    height: 55px;
+  }
 }
 
 button.react-calendar__tile--active {
-  background: #158e00;
+  background: $primaryGreenColor;
 }
 
 button.react-calendar__tile--active:enabled:focus {
-  background: #75c66a;
+  background: $hoverGreenColor;
+}
+
+@media screen and (min-width: 360px) and (max-width: 900px) {
+
+  body{
+    background-image: url(/images/background-bw.jpg);
+    background-repeat: no-repeat;
+  }
+
+  .pageContainer{
+    display: flex;
+    justify-content: center;
+
+    .pageContent{
+      width: 380px;
+      background-color: white;
+    }
+
+  }
+
+
 }
