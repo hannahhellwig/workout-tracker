@@ -8,9 +8,18 @@
 //   background-color: pink;
 // }
 
+.body{
+  width: 100%;
+}
+
 .profileInfoHeader{
   display: flex;
   flex-direction: row;
+
+  h1{
+    text-decoration: underline #158e00;
+  }
+
   img{
     margin: 10px 0;
     width: 120px;
@@ -27,5 +36,23 @@
   h2{
     font-size: 14px;
     margin: 0;
+  }
+
+  .points{
+    color: #158e00;
+  }
+}
+
+.dailyExercises{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 10px 0;
+  label{
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    width: 33.33%;
+    text-align: center;
   }
 }

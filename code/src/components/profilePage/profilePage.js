@@ -40,14 +40,14 @@ class ProfilePage extends React.Component {
   render() {
     return (
       <div>
-        <div className="profileInfoHeader">
+        <div className="profileInfoHeader underline">
           <h1>Your profile</h1>
           <img src="./images/user-image.jpeg" alt="user" />
         </div>
         <div className="profileInfo">
           <h2> Name: Namn Namnson</h2>
           <h2>Team name: team</h2>
-          <h2>Points: {this.state.score}</h2>
+          <h2 className="points">Points: {this.state.score}</h2>
         </div>
         <Calendar
           onClickDay={this.onChange} />

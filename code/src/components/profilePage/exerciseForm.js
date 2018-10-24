@@ -38,18 +38,18 @@ class ExerciseForm extends React.Component {
 
     return (
       <div>
-        <form>
+        <form className="dailyExercises">
           <label>
-            10 Situps (2 p)
             <input type="checkbox" checked={this.updateChecked} value="2p" onChange={this.updateTwoPoints} />
+            Situps 10 reps (2 p)
           </label>
           <label>
-            15 Burpees (3 p)
             <input type="checkbox" value="3p" onChange={this.updateThreePoints} />
+            Burpees 15 reps (3 p)
           </label>
           <label>
-            20 min jogging (5 p)
             <input type="checkbox" value="5p" onChange={this.updateFivePoints} />
+            Jogging 20 min (5 p)
           </label>
         </form>
       </div>
