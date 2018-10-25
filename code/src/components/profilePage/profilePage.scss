@@ -1,5 +1,6 @@
-$primaryGreenColor: #158e00;
-$hoverGreenColor: #75c66a;
+$primaryGreenColor: #75c66a;
+$primaryGreyColor: #CCC;
+$hoverGreenColor: #158e00;
 
 *{
   box-sizing: border-box;
@@ -7,6 +8,10 @@ $hoverGreenColor: #75c66a;
 
 .body{
   width: 100%;
+}
+
+.exerciseDone{
+  background-color: $primaryGreenColor;
 }
 
 .react-calendar{
@@ -19,7 +24,7 @@ $hoverGreenColor: #75c66a;
   justify-content: space-between;
 
   h1{
-    text-decoration: underline $primaryGreenColor;
+    text-decoration: underline $hoverGreenColor;
   }
 
   img{
@@ -41,7 +46,7 @@ $hoverGreenColor: #75c66a;
   }
 
   .points{
-    color: $primaryGreenColor;
+    color: $hoverGreenColor;
   }
 }
 
@@ -76,8 +81,9 @@ button.react-calendar__tile--active:enabled:focus {
 @media screen and (min-width: 360px) and (max-width: 900px) {
 
   body{
-    background-image: url(/images/background-bw.jpg);
+    background-image: url(/images/background-outdoor.jpg);
     background-repeat: no-repeat;
+    background-size: cover;
   }
 
   .pageContainer{
@@ -87,6 +93,34 @@ button.react-calendar__tile--active:enabled:focus {
     .pageContent{
       width: 380px;
       background-color: white;
+      padding: 15px;
+      border-radius: 20px;
+      opacity: 0.9;
+    }
+
+  }
+
+
+}
+
+@media screen and (min-width: 901px) {
+
+  body{
+    background-image: url(/images/background-outdoor.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .pageContainer{
+    display: flex;
+    justify-content: center;
+
+    .pageContent{
+      width: 380px;
+      background-color: white;
+      padding: 15px;
+      border-radius: 20px;
+      opacity: 0.9;
     }
 
   }

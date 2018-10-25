@@ -64,6 +64,17 @@ class ProfilePage extends React.Component {
     localStorage.setItem("userDates", JSON.stringify(currentDates))
   }
 
+  handleDateActivity = ({ date }) => {
+    const timestamp = date.getTime()
+    let active = false
+    const day = this.state.dates[timestamp]
+    if (day) {
+      active = (day.situps || day.burpees || day.jogging)
+    }
+
+    return active ? "exerciseDone" : null
+  }
+
   render() {
     return (
       <div className="pageContainer">
@@ -82,6 +93,7 @@ class ProfilePage extends React.Component {
             <h2 className="points">Points: {this.state.score}</h2>
           </div>
           <Calendar
+            tileClassName={this.handleDateActivity}
             onClickDay={date => this.onChange(date)} />
           {this.state.dateIsClicked &&
           <ExerciseForm
