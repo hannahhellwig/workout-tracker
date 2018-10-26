@@ -48,17 +48,17 @@ class ExerciseForm extends React.Component {
           <label>
             <img src="./images/situps.png" alt="strength" />
             <input type="checkbox" checked={this.props.activityDate.situps} value="2p" onChange={this.updateTwoPoints} />
-            Situps 10 reps (2 p)
+            Situps <br /> 10 reps (2 p)
           </label>
           <label>
             <img src="./images/burpees.png" alt="burpees" />
             <input type="checkbox" checked={this.props.activityDate.burpees} value="3p" onChange={this.updateThreePoints} />
-            Burpees 15 reps (3 p)
+            Burpees <br /> 15 reps (3 p)
           </label>
           <label>
             <img src="./images/jogging.png" alt="jogging" />
             <input type="checkbox" checked={this.props.activityDate.jogging} value="5p" onChange={this.updateFivePoints} />
-            Jogging 20 min (5 p)
+            Jogging <br /> 20 min (5 p)
           </label>
         </form>
       </div>

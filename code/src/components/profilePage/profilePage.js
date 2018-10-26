@@ -29,6 +29,7 @@ class ProfilePage extends React.Component {
 
   onChange = date => {
     const { dates } = this.state
+    // const dates = this.state.dates
     const timestamp = date.getTime()
     const currentScore = this.state.score
     const currentDates = this.state.dates
@@ -81,15 +82,15 @@ class ProfilePage extends React.Component {
         <div className="pageContent">
           <header className="profileHeader">
             <h1>
-            Your
+            My
               <br />
-            profile
+            progress
             </h1>
             <img src="./images/user-image.jpeg" alt="user" />
           </header>
           <div className="profileInfo">
-            <h2> Name: Namn Namnson</h2>
-            <h2>Team name: team</h2>
+            <h2> Name: Hannah Nyberg</h2>
+            <h2>Team name: Södermalms IK</h2>
             <h2 className="points">Points: {this.state.score}</h2>
           </div>
           <Calendar
