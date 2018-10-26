@@ -12,18 +12,14 @@ class ChooseTeamPage extends React.Component {
     }
   }
 
-  componentDidMount() {
-    fetch(`https://api.www.svenskaspel.se/player/sponsorship/autocomplete?search=${this.state.search}&numResponses=30"`).then(response => response.json()).then(json => {
-      this.setState({
-        data: json.data
-      })
-    })
-  }
-
   handleSearch = event => {
     this.setState({
       search: event.target.value
-    }, () => this.componentDidMount())
+    }, () => fetch(`https://api.www.svenskaspel.se/player/sponsorship/autocomplete?search=${this.state.search}&numResponses=30"`).then(response => response.json()).then(json => {
+      this.setState({
+        data: json.data
+      })
+    }))
   }
 
   render() {
