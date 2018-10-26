@@ -1,3 +1,7 @@
+$primaryGreenColor: #75c66a;
+$primaryGreyColor: #CCC;
+$hoverGreenColor: #158e00;
+
 body{
   padding: 20px;
 }
@@ -15,7 +19,29 @@ h3 {
 button {
   width: 100px;
   padding: 5px 10px;
-  border: 1px solid #000;
+  background-color: #fff;
+  color: #000;
+  border: 3px solid $hoverGreenColor;
+}
+
+.pageContainer {
+  background-image: url(/images/background-outdoor.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-position: center center;
+}
+
+.pageContent {
+  background-color: white;
+  padding: 15px;
+  opacity: 0.9;
+  min-height: auto;
+  overflow: scroll;
 }
 
 .teamList {
@@ -27,19 +53,20 @@ button {
   flex-direction: column;
   justify-content: space-between;
   margin: 20px 0;
+  padding-bottom: 20px;
 }
 
 .searchFieldContainer {
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
-  padding: 40px 0 20px;
+  padding: 20px 0 20px;
 
   input {
     width: 120px;
     height: auto;
     margin: 0 0 0 5px;
-    font-size: 14px;
+    font-size: 18px;
     background: transparent;
     border: 0;
     border-bottom: 1px solid #158e00;
@@ -48,6 +75,49 @@ button {
 
   input[type=search]:focus {
     background-color: #e0ffdb;
+  }
+
+}
+
+//Ipad
+@media screen and (min-width: 414px) and (max-width: 900px) {
+
+  .pageContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .pageContent{
+    width: 380px;
+    background-color: white;
+    padding: 15px;
+    border-radius: 20px;
+    opacity: 0.9;
+    min-height: auto;
+    overflow: scroll;
+  }
+}
+
+//Desktop
+@media screen and (min-width: 901px) {
+
+  .pageContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  .pageContent{
+    width: 380px;
+    background-color: white;
+    padding: 15px;
+    border-radius: 20px;
+    opacity: 0.9;
+    overflow: scroll;
+    margin-top: 20px;
   }
 
 }

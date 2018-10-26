@@ -19,25 +19,36 @@ class ChooseTeamPage extends React.Component {
       })
     })
   }
-  
+
   handleSearch = event => {
     this.setState({
-      search: event.target.value,
+      search: event.target.value
     }, () => this.componentDidMount())
   }
 
   render() {
     return (
-      <div>
-        <div className="searchFieldContainer">
-          <h3>I want to collect points to my team based in<input type="search" id="searchField" placeholder=" city" onChange={this.handleSearch} value={this.state.search} />!</h3>
-        </div>
-        <div className="teamList">
-          {this.state.data.map(team => <ChooseTeam
-            name={team.name}
-            id={team.id}
-            city={team.city}
-            subSection={team.subSection} />)}
+      <div className="pageContainer">
+        <div className="pageContent">
+          <header className="profileHeader">
+            <h1>
+          Hi
+              <br />
+          there!
+            </h1>
+          </header>
+          <div className="searchFieldContainer">
+            <h3>I want to collect points to my team based in<input type="search" id="searchField" placeholder=" city" onChange={this.handleSearch} value={this.state.search} />!</h3>
+          </div>
+          <div className="teamListContainer">
+            <div className="teamList">
+              {this.state.data.map(team => <ChooseTeam
+                name={team.name}
+                id={team.id}
+                city={team.city}
+                subSection={team.subSection} />)}
+            </div>
+          </div>
         </div>
       </div>
     )
