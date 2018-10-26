@@ -21,9 +21,8 @@ class App extends React.Component {
     return (
       <Router>
         <div>
-          <Link to="/"> Choose Team </Link>
-          <Link to="/profile"> Profile page </Link>
           <Route path="/" exact="true" component={ChooseTeamPage} />
+          <Route path="/chooseTeam" exact="true" component={ChooseTeamPage} />
           <Route path="/profile" exact="true" component={ProfilePage} />
         </div>
       </Router>

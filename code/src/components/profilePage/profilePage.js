@@ -1,6 +1,8 @@
 import React from "react"
+import { BrowserRouter as Router, Route, Link } from "react-router-dom"
 import Calendar from "react-calendar"
 import ExerciseForm from "./exerciseForm"
+import BackNagivationButton from "./backNagivationButton"
 
 class ProfilePage extends React.Component {
   constructor(props) {
@@ -80,6 +82,7 @@ class ProfilePage extends React.Component {
     return (
       <div className="pageContainer">
         <div className="pageContent">
+          <Link to="/"><BackNagivationButton /></Link>
           <header className="profileHeader">
             <h1>
             My
