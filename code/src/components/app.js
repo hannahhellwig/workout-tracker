@@ -6,17 +6,6 @@ import ChooseTeamPage from "./chooseTeamPage/chooseTeamPage"
 
 class App extends React.Component {
 
-  constructor(props) {
-    super(props)
-    this.state = {
-      page: "ProfilePage"
-    }
-  }
-
-  goToProfile = () => {
-    this.setState({ page: "ProfilePage"})
-  }
-
   render() {
     return (
       <Router>
